@@ -7,5 +7,6 @@ class UserSessionsController < ApplicationController
   end
 
   def destroy
+    render json: {message: "Success"}, status: 200
   end
 end
