@@ -12,7 +12,8 @@
   },
   "lint-staged": {
     "*.{js,vue}": "eslint",
-    "*.{css,vue}": "stylelint"
+    "*.{css,vue}": "stylelint",
+    "*.{rb}": "rubocop"
   },
   "husky": {
     "hooks": {

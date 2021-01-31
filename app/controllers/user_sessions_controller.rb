@@ -1,12 +1,18 @@
 class UserSessionsController < ApplicationController
+  skip_before_action :require_login, only: [:create]
+
   def create
     @user = login(params[:email], params[:password])
 
-    render json: @user if @user
-    render json: { message: "Incorrect email or password!"}, status: 403
+    if @user
+      render json: @user
+    else
+      render json: { success: false, message: 'Incorrect email or password!' }, status: 403
+    end
   end
 
   def destroy
-    render json: {message: "Success"}, status: 200
+    logout
+    render json: { success: true, message: 'Success' }, status: 200
   end
 end
