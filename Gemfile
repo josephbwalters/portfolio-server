@@ -5,8 +5,6 @@ ruby '3.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.1'
-# Use sqllite as the database for Active Record - for testing
-gem 'sqlite3'
 # Use postgres as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -57,6 +55,8 @@ group :development do
 end
 
 group :test do
+  # Use sqllite as the database for Active Record - for testing
+  gem 'sqlite3'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
