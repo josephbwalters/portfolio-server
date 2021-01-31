@@ -28,17 +28,27 @@ gem 'jbuilder', '~> 2.7'
 # Use sorcery for authentication
 gem 'sorcery'
 
-# Use rspec for tests
-gem 'rspec'
-gem 'rspec-rails'
-
-# Use rubocop for linting and code analysis
-gem 'rubocop'
+# Use rswag for swagger docs
+gem 'rswag-api'
+gem 'rswag-ui'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
+  # Use rspec for tests
+  gem 'rspec'
+  gem 'rspec-rails'
+
+  # Use rswag specs
+  gem 'rswag-specs'
+
+  # Use rubocop for linting and code analysis
+  gem 'rubocop'
+  gem 'rubocop-rspec'
+  gem 'rubocop-rails'
+
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
